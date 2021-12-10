@@ -21,6 +21,12 @@ export class CarouselDirective implements OnInit{
     val === 'No' ? this.clearAutoPlay() : this.playAutoPlay();
   }
 
+  @Input('appCarouselDelay')
+  set delay(val: number) {
+    this.clearAutoPlay();
+    this.playAutoPlay(val);
+  }
+
   ngOnInit(): void {
     this.context = {
       $implicit: this.images[0],
@@ -49,10 +55,10 @@ export class CarouselDirective implements OnInit{
     this.context.$implicit = this.images[this.index];
   }
 
-  public playAutoPlay() {
+  public playAutoPlay(delay: number = 1000) {
     this.timer = setInterval(() => {
       this.next();
-    }, 1000);
+    }, delay);
   }
 
   public clearAutoPlay() {
