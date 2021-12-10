@@ -1,2 +1,15 @@
 <input type="text" appColorful style="width: 50rem; border-width: 0.2rem">
 <p [appAppHighLight]="color"> Hello World </p>
+
+<!--<div *appCarousel="let image = $implicit from images">-->
+<div *appCarousel="let image from images; let ctrl = controller">
+  <img [src]="image" alt="carousel">
+  <button (click)="ctrl.next()">Next</button>
+  <button (click)="ctrl.prev()">Previous</button>
+</div>
+
+<!--<ng-template [appCarousel]>
+  <div>
+
+  </div>
+</ng-template>-->
