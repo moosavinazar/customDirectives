@@ -18,7 +18,7 @@ export class AppHighLightDirective {
 
   private changeBackgroundColor(color: string) {
     // this.element.nativeElement.style.backgroundColor = color;
-    this.renderer.setStyle(this.element, 'backgroundColor', color);
+    this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', color);
   }
 
 }
