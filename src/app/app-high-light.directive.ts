@@ -6,7 +6,7 @@ import {Directive, ElementRef, HostListener, Input, Renderer2} from '@angular/co
 export class AppHighLightDirective {
 
   constructor(private element: ElementRef, private renderer: Renderer2) { }
-  @Input() highLightColor: string = 'yellow';
+  @Input('appAppHighLight') highLightColor: string = 'yellow';
 
   @HostListener('mouseenter') onMouseEnter() {
     this.changeBackgroundColor(this.highLightColor);
