@@ -2,7 +2,7 @@
 <p [appAppHighLight]="color"> Hello World </p>
 
 <!--<div *appCarousel="let image = $implicit from images">-->
-<div *appCarousel="let image from images; let ctrl = controller">
+<div *appCarousel="let image from images autoplay 'Yes'; let ctrl = controller">
   <img [src]="image" alt="carousel">
   <button (click)="ctrl.next()">Next</button>
   <button (click)="ctrl.prev()">Previous</button>
